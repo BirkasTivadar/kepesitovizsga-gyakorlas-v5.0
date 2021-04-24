@@ -1,50 +1,33 @@
 package hu.nive.ujratervezes.kepesitovizsga.snowwhite;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 public class SnowWhite {
 
-//    private List<Dwarf> sevenDwarfs;
-//    private SnowWhite snowWhite;
-//
-//    @BeforeEach
-//    public void setUp() {
-//        sevenDwarfs = new ArrayList<>();
-//        sevenDwarfs.add(new Dwarf("Szende", 256));
-//        sevenDwarfs.add(new Dwarf("Szundi", 387));
-//        sevenDwarfs.add(new Dwarf("Morgó", 198));
-//        sevenDwarfs.add(new Dwarf("Hapci", 741));
-//        sevenDwarfs.add(new Dwarf("Tudor", 392));
-//        sevenDwarfs.add(new Dwarf("Vidor", 276));
-//        sevenDwarfs.add(new Dwarf("Kuka", 538));
-//
-//        snowWhite = new SnowWhite(sevenDwarfs);
-//    }
-//
-//    @Test
-//    public void testGetSevenDwarfs() {
-//        List<Dwarf> expected = snowWhite.getSevenDwarfs();
-//
-//        Assertions.assertEquals(expected, sevenDwarfs);
-//
-//        expected.add(new Dwarf("Sunyi", 654));
-//
-//        Assertions.assertNotEquals(expected, sevenDwarfs);
-//    }
-//
-//    @Test
-//    public void testGetSevenDwarfsOrderedByNames() {
-//        List<Dwarf> expected = snowWhite.getSevenDwarfsOrderedByNames();
-//
-//        Assertions.assertEquals("Hapci", expected.get(0).getName());
-//        Assertions.assertEquals(392, expected.get(5).getAge());
-//    }
-//
-//    @Test
-//    public void testGetSevenDwarfsOrderedByAges() {
-//        List<Dwarf> expected = snowWhite.getSevenDwarfsOrderedByAges();
-//
-//        Assertions.assertEquals("Vidor", expected.get(2).getName());
-//        Assertions.assertEquals(538, expected.get(5).getAge());
-//    }
+
+    private List<Dwarf> sevenDwarfs;
+
+    public SnowWhite(List<Dwarf> sevenDwarfs) {
+        this.sevenDwarfs = new ArrayList<>(sevenDwarfs);
+    }
+
+    public List<Dwarf> getSevenDwarfs() {
+        return new ArrayList<>(sevenDwarfs);
+    }
 
 
+    public List<Dwarf> getSevenDwarfsOrderedByNames() {
+        List<Dwarf> result = new ArrayList<>(sevenDwarfs);
+        Collections.sort(result, Comparator.comparing(Dwarf::getName));
+        return result;
+    }
+
+    public List<Dwarf> getSevenDwarfsOrderedByAges() {
+        List<Dwarf> result = new ArrayList<>(sevenDwarfs);
+        Collections.sort(result, Comparator.comparing(Dwarf::getAge));
+        return result;
+    }
 }

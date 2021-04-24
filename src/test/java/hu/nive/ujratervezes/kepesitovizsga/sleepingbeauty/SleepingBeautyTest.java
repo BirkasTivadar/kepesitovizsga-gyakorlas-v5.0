@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class SleepingBeautyTest {
 
     @Test
-    public void countCharacters() {
+    void countCharacters() {
         Map<Character, Integer> letters = new SleepingBeauty().countCharacters("sleepingbeauty.txt");
 
         assertEquals(32, letters.size());

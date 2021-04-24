@@ -7,7 +7,6 @@ import java.util.List;
 
 public class SnowWhite {
 
-
     private List<Dwarf> sevenDwarfs;
 
     public SnowWhite(List<Dwarf> sevenDwarfs) {
@@ -17,7 +16,6 @@ public class SnowWhite {
     public List<Dwarf> getSevenDwarfs() {
         return new ArrayList<>(sevenDwarfs);
     }
-
 
     public List<Dwarf> getSevenDwarfsOrderedByNames() {
         List<Dwarf> result = new ArrayList<>(sevenDwarfs);

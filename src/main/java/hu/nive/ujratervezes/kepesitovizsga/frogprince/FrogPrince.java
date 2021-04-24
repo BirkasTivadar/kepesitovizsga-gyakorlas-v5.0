@@ -15,7 +15,7 @@ public class FrogPrince {
         Set<PlayerOfTale> result = new HashSet<>();
         try (
                 Connection conn = dataSource.getConnection();
-                PreparedStatement ps = conn.prepareStatement(sqlOrder);
+                PreparedStatement ps = conn.prepareStatement(sqlOrder)
         ) {
             processResultSet(result, ps);
         } catch (SQLException sqlException) {

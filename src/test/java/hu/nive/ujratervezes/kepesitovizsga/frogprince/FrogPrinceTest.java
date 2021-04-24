@@ -1,7 +1,6 @@
 package hu.nive.ujratervezes.kepesitovizsga.frogprince;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
-import com.sun.source.doctree.SeeTree;
 import org.flywaydb.core.Flyway;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,7 +27,7 @@ class FrogPrinceTest {
     }
 
     @Test
-    public void getPlayersOfTale() {
+    void getPlayersOfTale() {
         Set<PlayerOfTale> playersOfTale = new FrogPrince().getPlayersOfTale(dataSource, Tale.FROGPRINCE);
 
         assertTrue(playersOfTale.contains(new PlayerOfTale("Békakirályfi", 27, Tale.FROGPRINCE)));

@@ -16,13 +16,13 @@ class CinderellaTest {
     }
 
     @Test
-    public void readFromFile() {
+    void readFromFile() {
         assertEquals(12, cinderella.getNumbers()[1]);
         assertEquals(22, cinderella.getNumbers()[3]);
     }
 
     @Test
-    public void getMax() {
+    void getMax() {
         Object[] expected = cinderella.getMax();
 
         assertEquals("Hamupipőke", expected[0]);

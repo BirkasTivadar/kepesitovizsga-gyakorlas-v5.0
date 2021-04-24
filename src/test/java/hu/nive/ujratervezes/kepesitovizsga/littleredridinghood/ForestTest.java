@@ -71,7 +71,7 @@ class ForestTest {
 
         Hunter hunter = new Hunter("Vadász");
         hunter.eat();
-        List<Forest> playersAtTheEndOfTheTale = Arrays.asList(new Hunter("Vadász"), new LittleRedRidingHood("Piroska"), new Grandma("Nagymama"));
+        List<Forest> playersAtTheEndOfTheTale = Arrays.asList(new Hunter("Vadász"), new Grandma("Nagymama"), new LittleRedRidingHood("Piroska"));
 
         assertEquals(playersAtTheEndOfTheTale, Forest.playersOfTheTale);
         assertEquals(7, LittleRedRidingHood.cake);

@@ -1,5 +1,7 @@
 package hu.nive.ujratervezes.kepesitovizsga.littleredridinghood;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -7,7 +9,7 @@ public abstract class Forest {
 
     private String name;
 
-    public static List<Forest> playersOfTheTale;
+    public static List<Forest> playersOfTheTale = new ArrayList<>(Arrays.asList(new LittleRedRidingHood("Piroska"), new Wolf("Farkas"), new Grandma("Nagymama"), new Hunter("Vadász")));
 
     public static List<Forest> playersEated;
 

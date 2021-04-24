@@ -12,30 +12,31 @@ public class SleepingBeauty {
         Map<Character, Integer> result = new HashMap<>();
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(
                 SleepingBeauty.class.getResourceAsStream("/" + s)))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                for (char c : line.toLowerCase().toCharArray()) {
-                    if (Character.isLetter(c)) {
-                        if (!result.containsKey(c)) {
-                            result.put(c, 0);
-                        }
-                        result.put(c, result.get(c) + 1);
-                    }
-                }
-            }
+
+            fileProcess(result, reader);
+
         } catch (IOException ioe) {
             throw new IllegalStateException("Can not read file", ioe);
         }
         return result;
     }
 
-
-    public static void main(String[] args) {
-        SleepingBeauty sleepingBeauty = new SleepingBeauty();
-
-        String s = "hello, bibi Őrült hülye";
-        Map<Character, Integer> letters = sleepingBeauty.countCharacters(s);
-        System.out.println(letters);
-
+    private void fileProcess(Map<Character, Integer> result, BufferedReader reader) throws IOException {
+        String line;
+        while ((line = reader.readLine()) != null) {
+            for (char c : line.toLowerCase().toCharArray()) {
+                countCharacter(result, c);
+            }
+        }
     }
+
+    private void countCharacter(Map<Character, Integer> result, char c) {
+        if (Character.isLetter(c)) {
+            if (!result.containsKey(c)) {
+                result.put(c, 0);
+            }
+            result.put(c, result.get(c) + 1);
+        }
+    }
+
 }
